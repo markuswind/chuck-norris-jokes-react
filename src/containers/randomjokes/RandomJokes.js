@@ -45,13 +45,13 @@ class RandomJokes extends Component {
 
     return (
       <JokeListComponent
-        jokes={state.randomJokes}
-        onRowClick={this.onAddToFavoriteButtonClicked}
-        rowButtonIcon="icon-add"
         title="Random jokes"
-        onButtonClick={this.onRefreshButtonClicked}
         buttonTitle="Refresh"
         buttonIcon="icon-refresh"
+        rowButtonIcon="icon-add"
+        jokes={state.randomJokes}
+        onRowClick={this.onAddToFavoriteButtonClicked}
+        onButtonClick={this.onRefreshButtonClicked}
       />
     );
   }

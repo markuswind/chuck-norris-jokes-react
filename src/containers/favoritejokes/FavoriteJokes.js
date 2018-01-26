@@ -70,13 +70,13 @@ class FavoriteJokes extends Component {
 
     return (
       <JokeListComponent
-        jokes={state.favoriteJokes}
-        onRowClick={this.onDeleteFavoriteJokeButtonClicked}
-        rowButtonIcon="icon-close"
         title="Favorite jokes"
-        onButtonClick={() => { this.onTimerButtonClicked(); }}
         buttonTitle={state.buttonTitle}
         buttonIcon="icon-timer"
+        rowButtonIcon="icon-remove"
+        jokes={state.favoriteJokes}
+        onRowClick={this.onDeleteFavoriteJokeButtonClicked}
+        onButtonClick={() => { this.onTimerButtonClicked(); }}
       />
     );
   }

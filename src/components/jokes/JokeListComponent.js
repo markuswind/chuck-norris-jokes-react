@@ -37,13 +37,13 @@ const JokeListComponent = (props) => {
 };
 
 JokeListComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+  buttonTitle: PropTypes.string.isRequired,
+  buttonIcon: PropTypes.oneOf(['icon-timer', 'icon-refresh']).isRequired,
+  rowButtonIcon: PropTypes.oneOf(['icon-add', 'icon-remove']).isRequired,
   jokes: PropTypes.arrayOf(Joke),
   onRowClick: PropTypes.func.isRequired,
-  rowButtonIcon: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
   onButtonClick: PropTypes.func.isRequired,
-  buttonTitle: PropTypes.string.isRequired,
-  buttonIcon: PropTypes.string.isRequired,
 };
 
 JokeListComponent.defaultProps = {
