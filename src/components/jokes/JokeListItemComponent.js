@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Joke from './../../stores/jokes/models/Joke';
-import JokeRowButtonComponent from './JokeRowButtonComponent';
+import JokeListItemButtonComponent from './JokeListItemButtonComponent';
 
-import './JokeRowComponent.css';
+import './JokeListItemComponent.css';
 
-const JokeRowComponent = (props) => {
+const JokeListItemComponent = (props) => {
   const { joke, onClick, buttonIcon } = props;
   return (
     <li>
       <span className="joke-text">{joke.joke}</span>
-      <JokeRowButtonComponent
+      <JokeListItemButtonComponent
         onClick={onClick}
         icon={buttonIcon}
       />
@@ -19,10 +19,10 @@ const JokeRowComponent = (props) => {
   );
 };
 
-JokeRowComponent.propTypes = {
+JokeListItemComponent.propTypes = {
   joke: PropTypes.instanceOf(Joke).isRequired,
   onClick: PropTypes.func.isRequired,
   buttonIcon: PropTypes.string.isRequired,
 };
 
-export default JokeRowComponent;
+export default JokeListItemComponent;

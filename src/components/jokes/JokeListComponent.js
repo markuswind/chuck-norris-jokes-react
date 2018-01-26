@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import ButtonComponent from './../general/button/ButtonComponent';
 import JokeListTitleComponent from './JokeListTitleComponent';
-import JokeRowComponent from './JokeRowComponent';
+import JokeListItemComponent from './JokeListItemComponent';
 
 import './JokeListComponent.css';
 
@@ -14,7 +14,7 @@ const JokeListComponent = (props) => {
 
   const jokeItems = props.jokes.map(joke => {
     return (
-      <JokeRowComponent
+      <JokeListItemComponent
         key={joke.id}
         joke={joke}
         onClick={() => { onRowClick(joke); }}

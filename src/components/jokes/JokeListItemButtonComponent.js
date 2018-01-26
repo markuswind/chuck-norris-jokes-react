@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './JokeRowButtonComponent.css';
+import './JokeListItemButtonComponent.css';
 
-const JokeRowButtonComponent = (props) => {
+const JokeListItemButtonComponent = (props) => {
   const { onClick, icon } = props;
 
   return (
@@ -11,14 +11,14 @@ const JokeRowButtonComponent = (props) => {
   );
 };
 
-JokeRowButtonComponent.propTypes = {
+JokeListItemButtonComponent.propTypes = {
   onClick: PropTypes.func,
   icon: PropTypes.string,
 };
 
-JokeRowButtonComponent.defaultProps = {
+JokeListItemButtonComponent.defaultProps = {
   onClick: undefined,
   icon: 'icon-add',
 };
 
-export default JokeRowButtonComponent;
+export default JokeListItemButtonComponent;
