@@ -17,14 +17,14 @@ class RandomJokesStore extends EventEmitter {
   registerToActions(action) {
     switch (action.actionType) {
       case ActionTypes.GET_RANDOM_JOKES:
-        this.addNewItems(action.payload.items);
+        this.updateItems(action.payload.items);
         break;
       default:
         break;
     }
   }
 
-  addNewItems(items) {
+  updateItems(items) {
     this.items = items.map(item => new Joke(item));
     this.emit(ActionTypes.UPDATED);
   }
