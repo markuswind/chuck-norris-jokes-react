@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './TitleComponent.css';
+import './JokeListTitleComponent.css';
 
-const TitleComponent = (props) => {
+const JokeListTitleComponent = (props) => {
   const { title } = props;
   return <h1>{title}</h1>;
 };
 
-TitleComponent.propTypes = {
+JokeListTitleComponent.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default TitleComponent;
+export default JokeListTitleComponent;

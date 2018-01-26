@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Joke from './../../../stores/jokes/models/Joke';
+import Joke from './../../stores/jokes/models/Joke';
 import JokeRowButtonComponent from './JokeRowButtonComponent';
 
 import './JokeRowComponent.css';

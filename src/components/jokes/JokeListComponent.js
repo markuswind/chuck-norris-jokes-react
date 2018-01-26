@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Joke from './../../../stores/jokes/models/Joke';
-import JokeRowComponent from './../joke/JokeRowComponent';
+import Joke from './../../stores/jokes/models/Joke';
+import JokeRowComponent from './JokeRowComponent';
 import './JokeListComponent.css';
 
 const JokeListComponent = (props) => {

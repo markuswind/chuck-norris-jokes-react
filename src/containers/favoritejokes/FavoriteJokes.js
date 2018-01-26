@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import ButtonComponent from './../../components/button/ButtonComponent';
+import ButtonComponent from './../../components/general/button/ButtonComponent';
 
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
-import TitleComponent from './../../components/list/title/TitleComponent';
-import JokeListComponent from './../../components/list/list/JokeListComponent';
+import JokeListTitleComponent from './../../components/jokes/JokeListTitleComponent';
+import JokeListComponent from './../../components/jokes/JokeListComponent';
 
 import './FavoriteJokes.css';
 
@@ -67,7 +67,7 @@ class FavoriteJokes extends Component {
 
     return (
       <div className="FavoriteJokes">
-        <TitleComponent title="Favorite jokes" />
+        <JokeListTitleComponent title="Favorite jokes" />
         <ButtonComponent
           onClick={() => { this.onTimerButtonClicked(); }}
           title="Start timer"

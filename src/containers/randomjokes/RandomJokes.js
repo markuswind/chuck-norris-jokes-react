@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import ButtonComponent from './../../components/button/ButtonComponent';
+import ButtonComponent from './../../components/general/button/ButtonComponent';
 
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
-import TitleComponent from './../../components/list/title/TitleComponent';
-import JokeListComponent from './../../components/list/list/JokeListComponent';
+import JokeListTitleComponent from './../../components/jokes/JokeListTitleComponent';
+import JokeListComponent from './../../components/jokes/JokeListComponent';
 
 import './RandomJokes.css';
 
@@ -50,7 +50,7 @@ class RandomJokes extends Component {
 
     return (
       <div className="RandomJokes">
-        <TitleComponent title="Random jokes" />
+        <JokeListTitleComponent title="Random jokes" />
         <ButtonComponent
           onClick={this.onRefreshButtonClicked}
           title="Refresh random jokes"
