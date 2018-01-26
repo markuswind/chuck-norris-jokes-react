@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ButtonComponent from './../../components/button/ButtonComponent';
+
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
@@ -23,12 +25,6 @@ class RandomJokes extends Component {
     RandomJokesStore.addChangeListener(this.onRandomJokeStoreUpdated);
   }
 
-  componentDidMount() {
-    RandomJokesActions.getRandomJokes({
-      pageSize: 10,
-    });
-  }
-
   componentWillUnmount() {
     RandomJokesStore.removeChangeListener(this.onRandomJokeStoreUpdated);
   }
@@ -36,6 +32,12 @@ class RandomJokes extends Component {
   onRandomJokeStoreUpdated() {
     this.setState({
       randomJokes: RandomJokesStore.getAllItems(),
+    });
+  }
+
+  onRefreshButtonClicked() {
+    RandomJokesActions.getRandomJokes({
+      pageSize: 10,
     });
   }
 
@@ -49,6 +51,11 @@ class RandomJokes extends Component {
     return (
       <div className="RandomJokes">
         <TitleComponent title="Random jokes" />
+        <ButtonComponent
+          onClick={this.onRefreshButtonClicked}
+          title="Refresh random jokes"
+          icon="icon-refresh"
+        />
         <JokeListComponent
           jokes={randomJokes}
           onClick={this.onAddToFavoriteButtonClicked}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ButtonComponent from './../../components/button/ButtonComponent';
+
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
@@ -36,6 +38,10 @@ class FavoriteJokes extends Component {
     });
   }
 
+  onTimerButtonClicked() {
+    console.log('TODO: - implement onTimerButtonClicked');
+  }
+
   onDeleteFavoriteJokeButtonClicked(joke) {
     FavoriteJokesActions.deleteFavoriteJoke({ id: joke.id });
   }
@@ -46,6 +52,11 @@ class FavoriteJokes extends Component {
     return (
       <div className="FavoriteJokes">
         <TitleComponent title="Favorite jokes" />
+        <ButtonComponent
+          onClick={this.onTimerButtonClicked}
+          title="Add random jokes to favorites"
+          icon="icon-timer"
+        />
         <JokeListComponent
           jokes={favoriteJokes}
           onClick={this.onDeleteFavoriteJokeButtonClicked}
