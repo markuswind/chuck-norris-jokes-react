@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
-import Title from './../../components/list/title/Title';
+import TitleComponent from './../../components/list/title/TitleComponent';
 
 import './FavoriteJokes.css';
 
@@ -38,7 +38,7 @@ class FavoriteJokes extends Component {
   render() {
     console.log('favoriteJokes', this.state.favoriteJokes);
     return (
-      <Title title="Favorite jokes" />
+      <TitleComponent title="Favorite jokes" />
     );
   }
 }

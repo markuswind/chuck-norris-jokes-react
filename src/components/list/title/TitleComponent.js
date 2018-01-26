@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Title.css';
+import './TitleComponent.css';
 
-const Title = (props) => {
+const TitleComponent = (props) => {
   const { title } = props;
   return <h1 className="List-title">{title}</h1>;
 };
 
-Title.propTypes = {
+TitleComponent.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default Title;
+export default TitleComponent;

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
-import Title from './../../components/list/title/Title';
+import TitleComponent from './../../components/list/title/TitleComponent';
 
 import './RandomJokes.css';
 
@@ -40,7 +40,7 @@ class RandomJokes extends Component {
   render() {
     console.log('randomJokes', this.state.randomJokes);
      return (
-      <Title title="Random jokes" />
+      <TitleComponent title="Random jokes" />
     );
   }
 }
