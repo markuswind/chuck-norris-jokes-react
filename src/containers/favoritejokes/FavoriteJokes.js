@@ -37,7 +37,7 @@ class FavoriteJokes extends Component {
   }
 
   onDeleteFavoriteJokeButtonClicked(joke) {
-    console.log('onDeleteFavoriteJokeButtonClicked', joke);
+    FavoriteJokesActions.deleteFavoriteJoke({ id: joke.id });
   }
 
   render() {

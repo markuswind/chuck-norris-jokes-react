@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
@@ -39,7 +40,7 @@ class RandomJokes extends Component {
   }
 
   onAddToFavoriteButtonClicked(joke) {
-    console.log('onAddToFavoriteButtonClicked', joke);
+    FavoriteJokesActions.addFavoriteJoke({ joke });
   }
 
   render() {
