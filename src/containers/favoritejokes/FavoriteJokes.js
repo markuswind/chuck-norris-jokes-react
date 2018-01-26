@@ -4,6 +4,7 @@ import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
 import TitleComponent from './../../components/list/title/TitleComponent';
+import JokeListComponent from './../../components/list/list/JokeListComponent';
 
 import './FavoriteJokes.css';
 
@@ -36,9 +37,13 @@ class FavoriteJokes extends Component {
   }
 
   render() {
-    console.log('favoriteJokes', this.state.favoriteJokes);
+    const { favoriteJokes } = this.state;
+
     return (
-      <TitleComponent title="Favorite jokes" />
+      <div className="FavoriteJokes">
+        <TitleComponent title="Favorite jokes" />
+        <JokeListComponent jokes={favoriteJokes} />
+      </div>
     );
   }
 }

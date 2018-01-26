@@ -1,16 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import Joke from './../../../stores/jokes/models/Joke';
-import './JokeRowComponent.css';
-
-const JokeRowComponent = (props) => {
-  const { joke } = props;
-  return <li className="li">{joke.joke}</li>;
-};
-
-JokeRowComponent.propTypes = {
-  joke: PropTypes.instanceOf(Joke).isRequired,
-};
-
-export default JokeRowComponent;
+li {
+  padding: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+  border: 1px solid #C5C5C5;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 1px 1px 3px 0px rgba(134, 134, 134, 0.21);
+}

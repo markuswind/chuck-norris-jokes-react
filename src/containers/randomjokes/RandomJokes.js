@@ -4,6 +4,7 @@ import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
 import TitleComponent from './../../components/list/title/TitleComponent';
+import JokeListComponent from './../../components/list/list/JokeListComponent';
 
 import './RandomJokes.css';
 
@@ -38,9 +39,13 @@ class RandomJokes extends Component {
   }
 
   render() {
-    console.log('randomJokes', this.state.randomJokes);
-     return (
-      <TitleComponent title="Random jokes" />
+    const { randomJokes } = this.state;
+
+    return (
+      <div className="RandomJokes">
+        <TitleComponent title="Random jokes" />
+        <JokeListComponent jokes={randomJokes} />
+      </div>
     );
   }
 }

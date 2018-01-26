@@ -9,8 +9,10 @@ import './App.css';
 const App = () => (
   <div className="App">
     <Header />
-    <FavoriteJokes />
-    <RandomJokes />
+    <div className="App-content">
+      <FavoriteJokes />
+      <RandomJokes />
+    </div>
   </div>
 );
 
