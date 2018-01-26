@@ -14,16 +14,12 @@ class FavoriteJokes extends Component {
 
     this.state = {
       favoriteJokes: FavoriteJokesStore.getAllItems(),
-      buttonTitle: 'Start timer',
+      buttonTitle: 'Start adding favorites',
     };
   }
 
   componentWillMount() {
     FavoriteJokesStore.addChangeListener(this.onFavoriteJokeStoreUpdated);
-  }
-
-  componentDidMount() {
-    FavoriteJokesActions.addRandomFavoriteJoke();
   }
 
   componentWillUnmount() {
@@ -61,7 +57,7 @@ class FavoriteJokes extends Component {
 
     this.addRandomFavoriteJokeTimer = null;
     this.setState({
-      buttonTitle: 'Start timer',
+      buttonTitle: 'Start adding favorites',
     });
   }
 

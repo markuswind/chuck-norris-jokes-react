@@ -11,7 +11,9 @@ class FavoriteJokesStore extends BasicItemStore {
     super();
 
     const itemsFromLocalStorage = localStorage.getItem(FAVORITE_JOKES_KEY);
+
     this.items = JSON.parse(itemsFromLocalStorage) || [];
+    this.items = this.items.map(item => new Joke(item));
   }
 
   registerToActions(action) {
