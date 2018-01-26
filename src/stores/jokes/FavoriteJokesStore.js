@@ -1,21 +1,17 @@
-import { EventEmitter } from 'events';
-
-import Dispatcher from './../../dispatcher';
 import ActionTypes from './../../constants/actionTypes';
 
+import BasicItemStore from './../BasicItemStore';
 import Joke from './models/Joke';
 
 const FAVORITE_JOKES_KEY = 'FAVORITE_JOKES';
 const MAX_FAVORITE_JOKES = 10;
 
-class FavoriteJokesStore extends EventEmitter {
+class FavoriteJokesStore extends BasicItemStore {
   constructor() {
     super();
 
     const itemsFromLocalStorage = localStorage.getItem(FAVORITE_JOKES_KEY);
     this.items = JSON.parse(itemsFromLocalStorage) || [];
-
-    Dispatcher.register(this.registerToActions.bind(this));
   }
 
   registerToActions(action) {
@@ -62,14 +58,6 @@ class FavoriteJokesStore extends EventEmitter {
 
   updateLocalStorage() {
     localStorage.setItem(FAVORITE_JOKES_KEY, JSON.stringify(this.items));
-  }
-
-  addChangeListener(callback) {
-    this.on(ActionTypes.UPDATED, callback);
-  }
-
-  removeChangeListener(callback) {
-    this.removeListener(ActionTypes.UPDATED, callback);
   }
 }
 
