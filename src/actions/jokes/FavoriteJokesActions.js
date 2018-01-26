@@ -28,7 +28,7 @@ class FavoriteJokesActions {
 
   // FIXME: duplicate code, see RandomJokesActions.js
   addRandomFavoriteJoke() {
-    const url = 'http://api.icndb.com/jokes/random/1';
+    const url = 'https://api.icndb.com/jokes/random/1';
 
     request(url, { json: true }, (error, response, body) => {
       if (error) { return console.error(error); }

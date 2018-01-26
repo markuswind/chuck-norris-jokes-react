@@ -6,7 +6,7 @@ import ActionTypes from './../../constants/ActionTypes';
 class RandomJokesActions {
   // FIXME: duplicate code, see FavoriteJokesActions.js
   getRandomJokes(payload) {
-    const url = `http://api.icndb.com/jokes/random/${payload.pageSize}`;
+    const url = `https://api.icndb.com/jokes/random/${payload.pageSize}`;
 
     request(url, { json: true }, (error, response, body) => {
       if (error) { return console.error(error); }
