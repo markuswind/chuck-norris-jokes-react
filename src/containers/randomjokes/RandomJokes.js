@@ -38,13 +38,21 @@ class RandomJokes extends Component {
     });
   }
 
+  onAddToFavoriteButtonClicked(joke) {
+    console.log('onAddToFavoriteButtonClicked', joke);
+  }
+
   render() {
     const { randomJokes } = this.state;
 
     return (
       <div className="RandomJokes">
         <TitleComponent title="Random jokes" />
-        <JokeListComponent jokes={randomJokes} />
+        <JokeListComponent
+          jokes={randomJokes}
+          onClick={this.onAddToFavoriteButtonClicked}
+          buttonIcon="icon-add"
+        />
       </div>
     );
   }

@@ -6,10 +6,16 @@ import JokeRowComponent from './../joke/JokeRowComponent';
 import './JokeListComponent.css';
 
 const JokeListComponent = (props) => {
-  const { jokes } = props;
+  const { jokes, onClick, buttonIcon } = props;
+
   const jokeItems = jokes.map(joke => {
     return (
-      <JokeRowComponent key={joke.id} joke={joke} />
+      <JokeRowComponent
+        key={joke.id}
+        joke={joke}
+        onClick={() => { onClick(joke); }}
+        buttonIcon={buttonIcon}
+      />
     );
   });
 
@@ -20,6 +26,8 @@ const JokeListComponent = (props) => {
 
 JokeListComponent.propTypes = {
   jokes: PropTypes.arrayOf(Joke),
+  onClick: PropTypes.func.isRequired,
+  buttonIcon: PropTypes.string.isRequired,
 };
 
 JokeListComponent.defaultProps = {

@@ -36,13 +36,21 @@ class FavoriteJokes extends Component {
     });
   }
 
+  onDeleteFavoriteJokeButtonClicked(joke) {
+    console.log('onDeleteFavoriteJokeButtonClicked', joke);
+  }
+
   render() {
     const { favoriteJokes } = this.state;
 
     return (
       <div className="FavoriteJokes">
         <TitleComponent title="Favorite jokes" />
-        <JokeListComponent jokes={favoriteJokes} />
+        <JokeListComponent
+          jokes={favoriteJokes}
+          onClick={this.onDeleteFavoriteJokeButtonClicked}
+          buttonIcon="icon-close"
+        />
       </div>
     );
   }
