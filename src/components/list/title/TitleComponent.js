@@ -5,7 +5,7 @@ import './TitleComponent.css';
 
 const TitleComponent = (props) => {
   const { title } = props;
-  return <h1 className="List-title">{title}</h1>;
+  return <h1>{title}</h1>;
 };
 
 TitleComponent.propTypes = {
