@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './../../assets/images/logo.svg';
 
-import FavoriteJokesActions from './../../actions/FavoriteJokesActions';
+import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
-import RandomJokesActions from './../../actions/RandomJokesActions';
+import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
 import './App.css';

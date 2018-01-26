@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 
-import Dispatcher from './../dispatcher';
-import ActionTypes from './../constants/actionTypes';
+import Dispatcher from './../dispatcher/Dispatcher';
+import ActionTypes from './../constants/ActionTypes';
 
 class BasicItemStore extends EventEmitter {
   constructor() {

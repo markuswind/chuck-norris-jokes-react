@@ -1,7 +1,7 @@
 import request from 'request';
 
-import Dispatcher from './../dispatcher';
-import ActionTypes from './../constants/actionTypes';
+import Dispatcher from './../../dispatcher/Dispatcher';
+import ActionTypes from './../../constants/ActionTypes';
 
 class FavoriteJokesActions {
   addFavoriteJoke(payload) {
