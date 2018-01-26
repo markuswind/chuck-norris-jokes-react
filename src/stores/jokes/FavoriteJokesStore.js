@@ -19,7 +19,7 @@ class FavoriteJokesStore extends BasicItemStore {
       case ActionTypes.ADD_FAVORITE_JOKE:
         this.addItem(action.payload.item);
         break;
-      case ActionTypes.GET_RANDOM_FAVORITE_JOKE:
+      case ActionTypes.ADD_RANDOM_FAVORITE_JOKE:
         this.addItem(action.payload.item);
         break;
       case ActionTypes.DELETE_FAVORITE_JOKE:
@@ -61,4 +61,4 @@ class FavoriteJokesStore extends BasicItemStore {
   }
 }
 
-export default FavoriteJokesStore;
+export default new FavoriteJokesStore();
