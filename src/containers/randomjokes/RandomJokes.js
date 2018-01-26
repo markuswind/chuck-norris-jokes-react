@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
-import ButtonComponent from './../../components/general/button/ButtonComponent';
-
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import RandomJokesActions from './../../actions/jokes/RandomJokesActions';
 import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
-import JokeListTitleComponent from './../../components/jokes/JokeListTitleComponent';
 import JokeListComponent from './../../components/jokes/JokeListComponent';
-
-import './RandomJokes.css';
 
 class RandomJokes extends Component {
   constructor(props) {
@@ -46,22 +41,18 @@ class RandomJokes extends Component {
   }
 
   render() {
-    const { randomJokes } = this.state;
+    const state = this.state;
 
     return (
-      <div className="RandomJokes">
-        <JokeListTitleComponent title="Random jokes" />
-        <ButtonComponent
-          onClick={this.onRefreshButtonClicked}
-          title="Refresh random jokes"
-          icon="icon-refresh"
-        />
-        <JokeListComponent
-          jokes={randomJokes}
-          onClick={this.onAddToFavoriteButtonClicked}
-          buttonIcon="icon-add"
-        />
-      </div>
+      <JokeListComponent
+        jokes={state.randomJokes}
+        onRowClick={this.onAddToFavoriteButtonClicked}
+        rowButtonIcon="icon-add"
+        title="Random jokes"
+        onButtonClick={this.onRefreshButtonClicked}
+        buttonTitle="Refresh"
+        buttonIcon="icon-refresh"
+      />
     );
   }
 }

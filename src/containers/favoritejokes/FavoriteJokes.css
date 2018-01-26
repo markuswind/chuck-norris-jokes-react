@@ -1,7 +1,0 @@
-.FavoriteJokes {
-  width: 40%;
-  min-width: 300px;
-  @media(max-width: 500px)
-    width: 80%;
-  margin: 10px auto;
-}

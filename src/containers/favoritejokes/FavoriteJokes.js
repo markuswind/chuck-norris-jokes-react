@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 
-import ButtonComponent from './../../components/general/button/ButtonComponent';
-
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 
-import JokeListTitleComponent from './../../components/jokes/JokeListTitleComponent';
 import JokeListComponent from './../../components/jokes/JokeListComponent';
-
-import './FavoriteJokes.css';
 
 class FavoriteJokes extends Component {
   constructor(props) {
@@ -63,22 +58,18 @@ class FavoriteJokes extends Component {
   }
 
   render() {
-    const { favoriteJokes } = this.state;
+    const state = this.state;
 
     return (
-      <div className="FavoriteJokes">
-        <JokeListTitleComponent title="Favorite jokes" />
-        <ButtonComponent
-          onClick={() => { this.onTimerButtonClicked(); }}
-          title="Start timer"
-          icon="icon-timer"
-        />
-        <JokeListComponent
-          jokes={favoriteJokes}
-          onClick={this.onDeleteFavoriteJokeButtonClicked}
-          buttonIcon="icon-close"
-        />
-      </div>
+      <JokeListComponent
+        jokes={state.favoriteJokes}
+        onRowClick={this.onDeleteFavoriteJokeButtonClicked}
+        rowButtonIcon="icon-close"
+        title="Favorite jokes"
+        onButtonClick={() => { this.onTimerButtonClicked(); }}
+        buttonTitle="Start timer"
+        buttonIcon="icon-timer"
+      />
     );
   }
 }
