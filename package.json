@@ -1,6 +1,7 @@
 {
   "name": "chuck-norris-jokes",
   "version": "0.1.0",
+  "homepage": "https://github.com/markuswind/chuck-norris-jokes-react/",
   "private": true,
   "dependencies": {
     "flux": "^3.1.3",
@@ -13,6 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deplay": "react-scripts && gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ."
@@ -22,6 +24,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.6.0"
+    "eslint-plugin-react": "^7.6.0",
+    "gh-pages": "^1.1.0"
   }
 }
