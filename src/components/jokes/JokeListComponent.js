@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Joke from './../../stores/jokes/models/Joke';
+// import Joke from './../../stores/jokes/models/Joke';
 
 import ButtonComponent from './../general/button/ButtonComponent';
 import JokeListTitleComponent from './JokeListTitleComponent';
@@ -41,7 +41,7 @@ JokeListComponent.propTypes = {
   buttonTitle: PropTypes.string.isRequired,
   buttonIcon: PropTypes.oneOf(['icon-timer', 'icon-refresh']).isRequired,
   rowButtonIcon: PropTypes.oneOf(['icon-add', 'icon-remove']).isRequired,
-  jokes: PropTypes.arrayOf(Joke),
+  jokes: PropTypes.array, // PropTypes.arrayOf(PropTypes.instanceof(Joke)),
   onRowClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
