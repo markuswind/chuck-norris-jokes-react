@@ -15,6 +15,8 @@ class FavoriteJokes extends Component {
     super(props);
 
     this.onFavoriteJokeStoreUpdated = this.onFavoriteJokeStoreUpdated.bind(this);
+    this.addRandomFavoriteTimer = null;
+
     this.state = {
       favoriteJokes: FavoriteJokesStore.getAllItems(),
     };
@@ -30,6 +32,7 @@ class FavoriteJokes extends Component {
 
   componentWillUnmount() {
     FavoriteJokesStore.removeChangeListener(this.onFavoriteJokeStoreUpdated);
+    this.clearAddRandomFavoriteTimer();
   }
 
   onFavoriteJokeStoreUpdated() {
@@ -39,11 +42,24 @@ class FavoriteJokes extends Component {
   }
 
   onTimerButtonClicked() {
-    console.log('TODO: - implement onTimerButtonClicked');
+    if (this.addRandomFavoriteTimer) {
+      this.clearAddRandomFavoriteTimer();
+    } else {
+      this.addRandomFavoriteTimer = setInterval(() => this.addRandomFavorite(), 5000);
+    }
   }
 
   onDeleteFavoriteJokeButtonClicked(joke) {
     FavoriteJokesActions.deleteFavoriteJoke({ id: joke.id });
+  }
+
+  addRandomFavorite() {
+    FavoriteJokesActions.addRandomFavoriteJoke();
+  }
+
+  clearAddRandomFavoriteTimer() {
+    clearInterval(this.addRandomFavoriteTimer);
+    this.addRandomFavoriteTimer = null;
   }
 
   render() {
@@ -53,8 +69,8 @@ class FavoriteJokes extends Component {
       <div className="FavoriteJokes">
         <TitleComponent title="Favorite jokes" />
         <ButtonComponent
-          onClick={this.onTimerButtonClicked}
-          title="Add random jokes to favorites"
+          onClick={() => { this.onTimerButtonClicked(); }}
+          title="Start timer"
           icon="icon-timer"
         />
         <JokeListComponent
