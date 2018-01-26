@@ -10,7 +10,7 @@ class FavoriteJokes extends Component {
     super(props);
 
     this.onFavoriteJokeStoreUpdated = this.onFavoriteJokeStoreUpdated.bind(this);
-    this.addRandomFavoriteTimer = null;
+    this.addRandomFavoriteJokeTimer = null;
 
     this.state = {
       favoriteJokes: FavoriteJokesStore.getAllItems(),
@@ -38,10 +38,10 @@ class FavoriteJokes extends Component {
   }
 
   onTimerButtonClicked() {
-    if (this.addRandomFavoriteTimer) {
+    if (this.addRandomFavoriteJokeTimer) {
       this.clearAddRandomFavoriteTimer();
     } else {
-      this.addRandomFavoriteTimer = setInterval(() => this.addRandomFavorite(), 5000);
+      this.addRandomFavoriteJokeTimer = setInterval(() => this.addRandomFavoriteJoke(), 5000);
       this.setState({
         buttonTitle: 'Stop timer',
       });
@@ -52,14 +52,14 @@ class FavoriteJokes extends Component {
     FavoriteJokesActions.deleteFavoriteJoke({ id: joke.id });
   }
 
-  addRandomFavorite() {
+  addRandomFavoriteJoke() {
     FavoriteJokesActions.addRandomFavoriteJoke();
   }
 
   clearAddRandomFavoriteTimer() {
-    clearInterval(this.addRandomFavoriteTimer);
+    clearInterval(this.addRandomFavoriteJokeTimer);
 
-    this.addRandomFavoriteTimer = null;
+    this.addRandomFavoriteJokeTimer = null;
     this.setState({
       buttonTitle: 'Start timer',
     });
