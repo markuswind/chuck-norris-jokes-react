@@ -10,7 +10,7 @@ const JokeRowComponent = (props) => {
   const { joke, onClick, buttonIcon } = props;
   return (
     <li>
-      {joke.joke}
+      <span className="joke-text">{joke.joke}</span>
       <JokeRowButtonComponent
         onClick={onClick}
         icon={buttonIcon}

@@ -9,7 +9,7 @@ const ButtonComponent = (props) => {
   return (
     <button onClick={onClick}>
       <span className={icon} />
-      {title}
+      <span className="button-title">{title}</span>
     </button>
   );
 };
