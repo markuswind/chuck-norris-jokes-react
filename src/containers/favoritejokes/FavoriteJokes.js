@@ -1,7 +1,9 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
 import FavoriteJokesActions from './../../actions/jokes/FavoriteJokesActions';
 import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
+
+import Title from './../../components/list/title/Title';
 
 import './FavoriteJokes.css';
 
@@ -35,7 +37,9 @@ class FavoriteJokes extends Component {
 
   render() {
     console.log('favoriteJokes', this.state.favoriteJokes);
-    return null;
+    return (
+      <Title title="Favorite jokes" />
+    );
   }
 }
 
