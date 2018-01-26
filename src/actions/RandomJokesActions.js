@@ -11,6 +11,9 @@ class RandomJokesActions {
           {
             id: 1,
             joke: 'joke',
+            categories: [
+              'nerdy'
+            ]
           },
         ],
       },

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './../../assets/images/logo.svg';
 
 import RandomJokesActions from './../../actions/RandomJokesActions';
-import RandomJokesStore from './../../stores/RandomJokesStore';
+import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 
 import './App.css';
 

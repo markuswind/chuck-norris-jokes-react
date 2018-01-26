@@ -1,7 +1,9 @@
 import { EventEmitter } from 'events';
 
-import Dispatcher from './../dispatcher';
-import ActionTypes from './../constants/actionTypes';
+import Dispatcher from './../../dispatcher';
+import ActionTypes from './../../constants/actionTypes';
+
+import Joke from './models/Joke';
 
 class RandomJokesStore extends EventEmitter {
   constructor() {
@@ -23,7 +25,7 @@ class RandomJokesStore extends EventEmitter {
   }
 
   addNewItems(items) {
-    this.items.push(...items);
+    this.items = items.map(item => new Joke(item));
     this.emit(ActionTypes.UPDATED);
   }
 
