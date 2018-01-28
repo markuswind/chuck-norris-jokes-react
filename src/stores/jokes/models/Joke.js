@@ -1,12 +1,11 @@
-class Joke {
+import BasicModel from './../../BasicModel';
+
+class Joke extends BasicModel {
   constructor(opts) {
-    this.id = opts.id || -1;
+    super(opts);
+
     this.joke = opts.joke || '';
     this.categories = opts.categories || [];
-  }
-
-  getId() {
-    return this.id;
   }
 
   getJoke() {
