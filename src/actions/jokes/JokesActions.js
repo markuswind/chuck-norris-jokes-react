@@ -4,13 +4,14 @@ import Dispatcher from './../../dispatcher/Dispatcher';
 
 const JokesActions = () => ({
   requestJokes(payload) {
-    const url = `https://api.icndb.com/jokes/random/${payload.pageSize}`;
+    const { pageSize, actionType } = payload;
+    const url = `https://api.icndb.com/jokes/random/${pageSize}`;
 
     request(url, { json: true }, (error, response, body) => {
       if (error) { return console.error(error); }
 
       Dispatcher.dispatch({
-        actionType: payload.actionType,
+        actionType,
         payload: {
           items: body.value,
         },
