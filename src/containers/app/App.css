@@ -1,8 +1,2 @@
 .app {
 }
-
-.appContent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
