@@ -13,7 +13,7 @@ class BasicItemStore extends EventEmitter {
   }
 
   registerToActions() {
-    console.warn('You probably forgot to implement registerToActions in your newly created store');
+    console.warn('You probably forgot to implement registerToActions inside this store', this.constructor.name);
   }
 
   getAllItems() {
