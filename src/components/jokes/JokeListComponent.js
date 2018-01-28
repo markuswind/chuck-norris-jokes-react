@@ -14,7 +14,7 @@ const JokeListComponent = (props) => {
 
   const jokeListItemComponents = props.jokes.map(joke => (
     <JokeListItemComponent
-      key={joke.id}
+      key={joke.getId()}
       joke={joke}
       onClick={() => { onRowClick(joke); }}
       buttonTitle={props.rowButtonTitle}

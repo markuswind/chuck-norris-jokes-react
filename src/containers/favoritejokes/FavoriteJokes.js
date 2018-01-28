@@ -45,7 +45,7 @@ class FavoriteJokes extends Component {
   }
 
   onDeleteFavoriteJokeButtonClicked(joke) {
-    FavoriteJokesActions.deleteFavoriteJoke({ id: joke.id });
+    FavoriteJokesActions.deleteFavoriteJoke({ id: joke.getId() });
   }
 
   addRandomFavoriteJoke() {

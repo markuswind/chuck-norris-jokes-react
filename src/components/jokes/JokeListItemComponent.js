@@ -13,7 +13,7 @@ const JokeListItemComponent = (props) => {
     <li>
       <div className="jokeWrapper">
         <div className="jokeContent">
-          <span className="jokeText">{joke.joke}</span>
+          <span className="jokeText">{joke.getJoke()}</span>
           <ButtonComponent
             onClick={onClick}
             title={buttonTitle}

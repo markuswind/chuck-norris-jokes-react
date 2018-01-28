@@ -51,7 +51,7 @@ class FavoriteJokesStore extends BasicItemStore {
   }
 
   removeItemFromArray(id) {
-    const indexToRemove = this.items.map(item => item.id).indexOf(id);
+    const indexToRemove = this.items.map(item => item.getId()).indexOf(id);
 
     if (indexToRemove !== -1) {
       this.items.splice(indexToRemove, 1);
