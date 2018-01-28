@@ -71,9 +71,9 @@ class FavoriteJokes extends Component {
       <JokeListComponent
         title="Favorite jokes"
         buttonTitle={timerButtonTitle}
-        rowButtonTitle="-"
+        listItemButtonTitle="-"
         jokes={favoriteJokes}
-        onRowClick={FavoriteJokes.onDeleteFavoriteJokeButtonClicked}
+        onListItemClick={FavoriteJokes.onDeleteFavoriteJokeButtonClicked}
         onButtonClick={() => { this.onTimerButtonClicked(); }}
       />
     );

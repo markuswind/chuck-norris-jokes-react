@@ -10,14 +10,14 @@ import JokeListItemComponent from './JokeListItemComponent';
 import './JokeListComponent.css';
 
 const JokeListComponent = (props) => {
-  const { onRowClick } = props;
+  const { onListItemClick } = props;
 
   const jokeListItemComponents = props.jokes.map(joke => (
     <JokeListItemComponent
       key={joke.getId()}
       joke={joke}
-      onClick={() => { onRowClick(joke); }}
-      buttonTitle={props.rowButtonTitle}
+      onClick={() => { onListItemClick(joke); }}
+      buttonTitle={props.listItemButtonTitle}
     />
   ));
 
@@ -36,9 +36,9 @@ const JokeListComponent = (props) => {
 JokeListComponent.propTypes = {
   title: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
-  rowButtonTitle: PropTypes.string.isRequired,
+  listItemButtonTitle: PropTypes.string.isRequired,
   jokes: PropTypes.arrayOf(PropTypes.instanceOf(Joke)),
-  onRowClick: PropTypes.func.isRequired,
+  onListItemClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,
 };
 
