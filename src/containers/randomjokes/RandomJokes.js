@@ -7,6 +7,16 @@ import RandomJokesStore from './../../stores/jokes/RandomJokesStore';
 import JokeListComponent from './../../components/jokes/JokeListComponent';
 
 class RandomJokes extends Component {
+  static onRefreshButtonClicked() {
+    RandomJokesActions.getRandomJokes({
+      pageSize: 10,
+    });
+  }
+
+  static onAddToFavoriteButtonClicked(joke) {
+    FavoriteJokesActions.addFavoriteJoke({ joke });
+  }
+
   constructor(props) {
     super(props);
 
@@ -30,27 +40,17 @@ class RandomJokes extends Component {
     });
   }
 
-  onRefreshButtonClicked() {
-    RandomJokesActions.getRandomJokes({
-      pageSize: 10,
-    });
-  }
-
-  onAddToFavoriteButtonClicked(joke) {
-    FavoriteJokesActions.addFavoriteJoke({ joke });
-  }
-
   render() {
-    const state = this.state;
+    const { randomJokes } = this.state;
 
     return (
       <JokeListComponent
         title="Random jokes"
         buttonTitle="Refresh"
         rowButtonTitle="+"
-        jokes={state.randomJokes}
-        onRowClick={this.onAddToFavoriteButtonClicked}
-        onButtonClick={this.onRefreshButtonClicked}
+        jokes={randomJokes}
+        onRowClick={RandomJokes.onAddToFavoriteButtonClicked}
+        onButtonClick={RandomJokes.onRefreshButtonClicked}
       />
     );
   }

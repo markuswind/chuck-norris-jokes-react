@@ -6,6 +6,14 @@ import FavoriteJokesStore from './../../stores/jokes/FavoriteJokesStore';
 import JokeListComponent from './../../components/jokes/JokeListComponent';
 
 class FavoriteJokes extends Component {
+  static onDeleteFavoriteJokeButtonClicked(joke) {
+    FavoriteJokesActions.deleteFavoriteJoke({ id: joke.getId() });
+  }
+
+  static addRandomFavoriteJoke() {
+    FavoriteJokesActions.addRandomFavoriteJoke();
+  }
+
   constructor(props) {
     super(props);
 
@@ -14,7 +22,7 @@ class FavoriteJokes extends Component {
 
     this.state = {
       favoriteJokes: FavoriteJokesStore.getAllItems(),
-      buttonTitle: 'Start adding favorites',
+      timerButtonTitle: 'Start adding favorites',
     };
   }
 
@@ -37,19 +45,14 @@ class FavoriteJokes extends Component {
     if (this.addRandomFavoriteJokeTimer) {
       this.clearAddRandomFavoriteTimer();
     } else {
-      this.addRandomFavoriteJokeTimer = setInterval(() => this.addRandomFavoriteJoke(), 5000);
+      this.addRandomFavoriteJokeTimer = setInterval(() => {
+        FavoriteJokes.addRandomFavoriteJoke();
+      }, 5000);
+
       this.setState({
-        buttonTitle: 'Stop timer',
+        timerButtonTitle: 'Stop timer',
       });
     }
-  }
-
-  onDeleteFavoriteJokeButtonClicked(joke) {
-    FavoriteJokesActions.deleteFavoriteJoke({ id: joke.getId() });
-  }
-
-  addRandomFavoriteJoke() {
-    FavoriteJokesActions.addRandomFavoriteJoke();
   }
 
   clearAddRandomFavoriteTimer() {
@@ -57,20 +60,20 @@ class FavoriteJokes extends Component {
 
     this.addRandomFavoriteJokeTimer = null;
     this.setState({
-      buttonTitle: 'Start adding favorites',
+      timerButtonTitle: 'Start adding favorites',
     });
   }
 
   render() {
-    const state = this.state;
+    const { timerButtonTitle, favoriteJokes } = this.state;
 
     return (
       <JokeListComponent
         title="Favorite jokes"
-        buttonTitle={state.buttonTitle}
+        buttonTitle={timerButtonTitle}
         rowButtonTitle="-"
-        jokes={state.favoriteJokes}
-        onRowClick={this.onDeleteFavoriteJokeButtonClicked}
+        jokes={favoriteJokes}
+        onRowClick={FavoriteJokes.onDeleteFavoriteJokeButtonClicked}
         onButtonClick={() => { this.onTimerButtonClicked(); }}
       />
     );
