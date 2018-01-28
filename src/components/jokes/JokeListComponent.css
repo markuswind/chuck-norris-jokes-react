@@ -1,12 +1,9 @@
-/* NOTE: - should have taken more time to improve overal css consistency */
-.JokeList {
-  width: 40%;
-  min-width: 300px;
-  @media(max-width: 500px)
-    width: 80%;
-  margin: 10px auto;
+.jokeListWrapper {
+  flex: 0.5;
+  flex-direction: column;
+  justify-content: center;
 }
 
-ul {
+.jokeList {
   list-style: none;
 }

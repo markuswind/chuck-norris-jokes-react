@@ -1,9 +1,10 @@
-/* NOTE: - should have taken more time to improve overal css consistency */
-h1 {
-  position: relative;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  line-height: 1em;
+.jokeListTitleWrapper {
+  margin: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.jokeListTitle {
   text-align: center;
   font-size: 48px;
   color: #292828;

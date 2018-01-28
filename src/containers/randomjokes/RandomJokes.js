@@ -47,8 +47,7 @@ class RandomJokes extends Component {
       <JokeListComponent
         title="Random jokes"
         buttonTitle="Refresh"
-        buttonIcon="icon-refresh"
-        rowButtonIcon="icon-add"
+        rowButtonTitle="+"
         jokes={state.randomJokes}
         onRowClick={this.onAddToFavoriteButtonClicked}
         onButtonClick={this.onRefreshButtonClicked}

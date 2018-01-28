@@ -18,20 +18,19 @@ const JokeListComponent = (props) => {
         key={joke.id}
         joke={joke}
         onClick={() => { onRowClick(joke); }}
-        buttonIcon={props.rowButtonIcon}
+        buttonTitle={props.rowButtonTitle}
       />
     );
   });
 
   return (
-    <div className="JokeList">
+    <div className="jokeListWrapper">
       <JokeListTitleComponent title={props.title} />
       <ButtonComponent
         onClick={() => { props.onButtonClick(); }}
         title={props.buttonTitle}
-        icon={props.buttonIcon}
       />
-      <ul>{jokeItems}</ul>
+      <ul className="jokeList">{jokeItems}</ul>
     </div>
   );
 };
@@ -39,8 +38,7 @@ const JokeListComponent = (props) => {
 JokeListComponent.propTypes = {
   title: PropTypes.string.isRequired,
   buttonTitle: PropTypes.string.isRequired,
-  buttonIcon: PropTypes.oneOf(['icon-timer', 'icon-refresh']).isRequired,
-  rowButtonIcon: PropTypes.oneOf(['icon-add', 'icon-remove']).isRequired,
+  rowButtonTitle: PropTypes.string.isRequired,
   jokes: PropTypes.array, // PropTypes.arrayOf(PropTypes.instanceof(Joke)),
   onRowClick: PropTypes.func.isRequired,
   onButtonClick: PropTypes.func.isRequired,

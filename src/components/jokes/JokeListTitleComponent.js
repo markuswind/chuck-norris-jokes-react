@@ -5,7 +5,14 @@ import './JokeListTitleComponent.css';
 
 const JokeListTitleComponent = (props) => {
   const { title } = props;
-  return <h1>{title}</h1>;
+
+  return (
+    <div className="jokeListTitleWrapper">
+      <h1 className="jokeListTitle">
+        {title}
+      </h1>
+    </div>
+  );
 };
 
 JokeListTitleComponent.propTypes = {
