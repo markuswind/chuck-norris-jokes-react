@@ -22,7 +22,7 @@ class FavoriteJokesStore extends BasicItemStore {
         this.addItem(action.payload.item);
         break;
       case ActionTypes.ADD_RANDOM_FAVORITE_JOKE:
-        this.addItem(action.payload.item);
+        this.addItem(action.payload.items[0]);
         break;
       case ActionTypes.DELETE_FAVORITE_JOKE:
         this.removeItem(action.payload.id);

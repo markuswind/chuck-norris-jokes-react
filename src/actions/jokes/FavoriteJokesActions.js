@@ -1,9 +1,8 @@
-import request from 'request';
-
-import Dispatcher from './../../dispatcher/Dispatcher';
 import ActionTypes from './../../constants/ActionTypes';
+import Dispatcher from './../../dispatcher/Dispatcher';
+import JokesActions from './JokesActions';
 
-class FavoriteJokesActions {
+const FavoriteJokesActions = () => ({
   addFavoriteJoke(payload) {
     const { joke } = payload;
 
@@ -13,7 +12,7 @@ class FavoriteJokesActions {
         item: joke,
       },
     });
-  }
+  },
 
   deleteFavoriteJoke(payload) {
     const { id } = payload;
@@ -24,25 +23,14 @@ class FavoriteJokesActions {
         id,
       },
     });
-  }
+  },
 
-  // FIXME: duplicate code, see RandomJokesActions.js
   addRandomFavoriteJoke() {
-    const url = 'https://api.icndb.com/jokes/random/1';
-
-    request(url, { json: true }, (error, response, body) => {
-      if (error) { return console.error(error); }
-
-      Dispatcher.dispatch({
-        actionType: ActionTypes.ADD_RANDOM_FAVORITE_JOKE,
-        payload: {
-          item: body.value[0],
-        },
-      });
-
-      return true;
+    JokesActions.requestJokes({
+      actionType: ActionTypes.ADD_RANDOM_FAVORITE_JOKE,
+      pageSize: 1,
     });
-  }
-}
+  },
+});
 
 export default new FavoriteJokesActions();

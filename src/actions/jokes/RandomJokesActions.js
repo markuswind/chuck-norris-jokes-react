@@ -1,26 +1,13 @@
-import request from 'request';
-
-import Dispatcher from './../../dispatcher/Dispatcher';
 import ActionTypes from './../../constants/ActionTypes';
+import JokesActions from './JokesActions';
 
-class RandomJokesActions {
-  // FIXME: duplicate code, see FavoriteJokesActions.js
+const RandomJokesActions = () => ({
   getRandomJokes(payload) {
-    const url = `https://api.icndb.com/jokes/random/${payload.pageSize}`;
-
-    request(url, { json: true }, (error, response, body) => {
-      if (error) { return console.error(error); }
-
-      Dispatcher.dispatch({
-        actionType: ActionTypes.GET_RANDOM_JOKES,
-        payload: {
-          items: body.value,
-        },
-      });
-
-      return true;
+    JokesActions.requestJokes({
+      actionType: ActionTypes.GET_RANDOM_JOKES,
+      pageSize: payload.pageSize,
     });
-  }
-}
+  },
+});
 
 export default new RandomJokesActions();
