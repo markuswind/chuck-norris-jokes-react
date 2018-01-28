@@ -1,4 +1,4 @@
-.jokeWrapper {
+.jokeListItemWrapper {
   margin: 16px;
   padding: 16px;
   background-color: white;
@@ -7,7 +7,7 @@
   box-shadow: 1px 1px 3px 0px rgba(134, 134, 134, 0.21);
 }
 
-.jokeContent {
+.jokeListItemContent {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-.jokeText {
+.jokeListItemText {
   margin-right: 8px;
   flex-basis: 80%;
 }

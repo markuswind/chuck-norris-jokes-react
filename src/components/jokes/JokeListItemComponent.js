@@ -10,15 +10,13 @@ const JokeListItemComponent = (props) => {
   const { joke, onClick, buttonTitle } = props;
 
   return (
-    <li>
-      <div className="jokeWrapper">
-        <div className="jokeContent">
-          <span className="jokeText">{joke.getJoke()}</span>
-          <ButtonComponent
-            onClick={onClick}
-            title={buttonTitle}
-          />
-        </div>
+    <li className="jokeListItemWrapper">
+      <div className="jokeListItemContent">
+        <span className="jokeListItemText">{joke.getJoke()}</span>
+        <ButtonComponent
+          onClick={onClick}
+          title={buttonTitle}
+        />
       </div>
     </li>
   );
