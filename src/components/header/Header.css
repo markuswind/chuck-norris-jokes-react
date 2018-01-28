@@ -1,11 +1,17 @@
-/* NOTE: - should have taken more time to improve overal css consistency */
-.App-header {
+.appHeader {
   background-color: #333;
   padding: 8px;
   box-shadow: 1px 1px 3px 0px rgba(134, 134, 134, 0.21);
 }
 
-.App-title {
+.appTitleHeader {
+  margin: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.appTitle {
+  text-align: center;
   font-size: 48px;
   color: white;
 }

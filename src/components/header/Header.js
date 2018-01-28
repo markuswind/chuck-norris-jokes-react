@@ -3,8 +3,10 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => (
-  <header className="App-header">
-    <h1 className="App-title">Chuck Norris Jokes</h1>
+  <header className="appHeader">
+    <div className="appTitleWrapper">
+      <h1 className="appTitle">Chuck Norris Jokes</h1>
+    </div>
   </header>
 );
 

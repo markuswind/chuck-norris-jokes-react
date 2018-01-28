@@ -8,8 +8,8 @@ const ButtonComponent = (props) => {
 
   return (
     <div className="buttonWrapper">
-      <button className="generalButton" onClick={onClick}>
-        <span className="button-title">{title}</span>
+      <button className="button" onClick={onClick}>
+        <span className="buttonTitle">{title}</span>
       </button>
     </div>
   );

@@ -6,7 +6,7 @@
   margin: 16px;
 }
 
-.generalButton {
+.button {
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
@@ -17,7 +17,7 @@
   border-radius: 20px;
 }
 
-.button-title {
+.buttonTitle {
   font-size: 14px;
   margin-top: 8px;
   margin-right: 16px;
